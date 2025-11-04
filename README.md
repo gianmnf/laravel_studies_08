@@ -10,3 +10,5 @@ composer update
 # Migration / Seed
 php artisan migrate
 php artisan db:seed --class=DatabaseSeeder
+
+php artisan fortify:install
