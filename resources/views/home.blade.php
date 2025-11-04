@@ -6,7 +6,11 @@
                 <p class="display-6">{{ env('APP_NAME') }}</p>
             </div>
             <div class="col d-flex justify-content-end align-items-center gap-5 p-3">
-                <span>User: <strong class="text-info">[user]</strong></span>
+                <span>User: <strong class="text-info">
+                    {{ Auth::user()->name }}
+                    <span class="ms-3 opacity-50">({{ Auth::user()->email }})</span>
+                </strong>                
+                </span>
                 <form action="{{ route('logout') }}" method="post">
                     @csrf
                     <button type="submit" class="btn btn-danger">
@@ -22,6 +26,10 @@
             <div class="col text-center">
 
                 <span class="display-3">HOMEPAGE</span>
+
+                <hr>
+
+                <a href="{{ route('contacts') }}">CONTACTS PAGE</a>
 
             </div>
         </div>
